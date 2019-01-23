@@ -13,12 +13,13 @@ namespace ThreadsExample_DotNet
         {
 
             Console.WriteLine("Inician los Threads");
-
+            // se puede agregar el metodo directamente al thread
             Thread task1 = new Thread(new ThreadStart(PrintTime));
             task1.Start();
-
+            
+            //se puede declarar el delegado aparte
             ThreadStart tStart = new ThreadStart(PrintTime2);
-            Thread task2 = new Thread(tStart);
+            Thread task2 = new Thread(tStart); //le pasamos el delegado
             task2.Start();
 
             Console.WriteLine("Finaliza programa");
